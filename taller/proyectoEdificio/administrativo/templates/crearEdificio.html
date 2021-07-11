@@ -1,0 +1,54 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Crear Edificio
+{% endblock %}
+{% block content %}
+<h2>Crear Edificio</h2>
+<hr>
+<form action="" method="post">
+  {% csrf_token %}
+  <section class=" pt-3"  >
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class='wrapper-dos-columnas'>
+        <div class='row'>
+          <div class='column'>
+            <div class='izquierda-column'>
+              
+              <div class="">
+                {{ formulario.nombre.errors }}
+                <label for="{{ formulario.nombre.id_for_label }}">Ingrese Nombre del Edificio: </label>
+                {{ formulario.nombre }}
+              </div>
+              <br>
+              <div>     
+                {{ formulario.ciudad.errors }}
+                <label for="{{ formulario.ciudad.id_for_label }}">Ingrese la Ciudad: </label>
+                {{ formulario.ciudad }}
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="derecha-column">  
+              <div>
+                {{ formulario.direccion.errors }}
+                <label for="{{ formulario.direccion.id_for_label }}">Ingrese dirección: </label>
+                {{ formulario.direccion }}
+              </div>
+              <br>
+              <div class="">
+                {{ formulario.tipo.errors }}
+                <label for="{{ formulario.tipo.id_for_label }}">Ingrese Tipo: </label>
+                {{ formulario.tipo }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div><input type='submit' value='Agregar'/></div>
+    </form>
+    <hr>
+  </section>
+        
+{% endblock %}

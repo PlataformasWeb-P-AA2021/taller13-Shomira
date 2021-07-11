@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <section class="contenido">
+      <section class="encabezado">
+        <header>
+          <h1>Aplicación Administración </h1>
+        </header>
+      </section>
+      <div>
+        <nav class="top_menu">
+          <button class="btn btn-secondary"><a href="{% url 'index' %}">Inicio</a></button>
+          <button class="btn btn-success"><a href="{% url 'crear_edificio' %}">Agregar Edificio</a></button>
+          <button class="btn btn-primary"><a href="{% url 'crear_departamento' %}">Agregar Departamento</a></button>
+        </nav>
+      </div>
+     
+      <section class="">
+          {% block content %}
+          {% endblock %}
+      </section>
+
+      <footer>
+        <p>Loja-Ecuador</p>
+        <p>{% now "j F Y H:i" %}</p>
+      </footer>
+    </section>
+  </body>
+  <script>
+    $(document).ready( function () {
+      // cambio de idioma a la tabla
+    $('#tabla_datos').DataTable({
+        responsive:true,
+        autowidth:false,
+        dom: 'Blfrtip',
+        "language": {
+                "lengthMenu": "Mostrar _MENU_ registros",
+                "zeroRecords": "Nada encontrado - disculpa",
+                "info": "Mostrando la página _PAGE_ de _PAGES_",
+                "infoEmpty": "Usuario no encontrado",
+                "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                "search": "Buscar:",
+                "paginate": {    
+                    "previous" : "Anterior",
+                    "next": "Siguiente"   
+                            },
+                "buttons":{"copy": "Copiar"}
+        }
+    });
+  });
+  </script>
+ 
+</html>

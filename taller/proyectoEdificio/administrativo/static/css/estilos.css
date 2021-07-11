@@ -1,0 +1,106 @@
+
+body {
+    /*background: #FEFEFD;*/
+    background: #FEFEFD;
+    padding: 30px;
+  
+  }
+header{
+    padding:  0.8em;
+}
+/*ENVCABEZADO*/
+.encabezado{
+    border-left: 8px solid #167503;
+    border-bottom: 2px solid #167503;
+    background-color: #85c285;
+
+}
+  /* Tabla y section que la contiene*/
+  
+section {
+    width: 100%;
+}
+  
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+thead{
+    background-color: #ccc097;
+    border-bottom: 3px solid rgb(66, 55, 38);
+}
+tr:hover {
+    background-color: #a59a7d;
+}
+tr:nth-child(even) {
+    background-color: #753b3b;
+  }
+
+.contenido{
+    margin: 2em;
+
+}
+.estiloTabla, .estiloTablaUs{
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 2px 8px 8px 2px rgba(0, 0, 0, 0.25); 
+}
+/*Menu de Ceear eficio, editar*/
+.top_menu a {
+    text-decoration: none;
+  list-style:none;
+  color: #ffffff;
+  padding: 5px;
+  width:95%;
+}
+.top_menu button {
+    margin: 0.8em 0em;
+}
+
+/*Formulario dos columnas*/
+
+.wrapper-dos-columnas {
+    margin: 15px;
+
+  }
+  
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+  
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+  
+.izquierda-column {
+    background-color: #FFF;
+    height: 110px;
+}
+  
+  .derecha-column {
+    background-color: #FFF;
+    height: 110px;
+  } 
+  /*Formulario de departamento*/
+.fieldWrapperEdificio select{
+    width: 40%;
+    background-color: #FFF;
+}
+.row label {
+    font-weight: 700;
+ }
+ /*Template Obtener Edificio*/
+ .datosEdificio{
+     margin: 1.2em 1em;
+ }
+.datosEdificio hr{
+    width: 30%;
+    margin: 0em;
+ }

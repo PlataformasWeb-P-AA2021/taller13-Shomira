@@ -1,0 +1,55 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Crear departamento
+{% endblock %}
+{% block content %}
+
+<h2>Crear Departamento</h3>
+  <hr>
+  <section class=" pt-3"  >
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class='wrapper-dos-columnas'>
+        <div class='row'>
+          <div class='column'>
+            <div class='izquierda-column'>
+              <div class="fieldWrapper">
+                {{ formulario.nombre_propietario.errors }}
+                <label for="{{ formulario.nombre_propietario.id_for_label }}">Nombre completo del Propietario: </label>
+                {{ formulario.nombre_propietario }}
+              </div>
+                <br>
+              <div class="fieldWrapper">
+                {{ formulario.costo.errors }}
+                <label for="{{ formulario.costo.id_for_label }}">Ingrese el costo: </label>
+                {{ formulario.costo }}
+              </div>
+            </div>
+          </div>
+          <div class='column'>
+            <div class='derecha-column'>
+              <div class="fieldWrapper">
+                {{ formulario.numero_cuartos.errors }}
+                <label for="{{ formulario.numero_cuartos.id_for_label }}">Ingrese número cuartos: </label>
+                {{ formulario.numero_cuartos }}
+              </div>
+              <div class="fieldWrapperEdificio">
+                <br>
+                {{ formulario.direccion.errors }}
+                <label for="{{ formulario.edificio.id_for_label }}">Elija un Edificio al que pertenece: </label>
+                {{ formulario.edificio }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div><input type='submit' value='Agregar'/></div>
+      <br>
+      <hr>
+    </form>
+  </section>
+
+  
+{% endblock %}
