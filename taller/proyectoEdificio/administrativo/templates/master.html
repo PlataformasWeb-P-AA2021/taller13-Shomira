@@ -30,9 +30,17 @@
       </section>
       <div>
         <nav class="top_menu">
+        {% if user.is_authenticated %}
+          <li class="bienvenida">  Bienvenido: {{user.username}}</li>
+        {% endif %}
           <button class="btn btn-secondary"><a href="{% url 'index' %}">Inicio</a></button>
           <button class="btn btn-success"><a href="{% url 'crear_edificio' %}">Agregar Edificio</a></button>
           <button class="btn btn-primary"><a href="{% url 'crear_departamento' %}">Agregar Departamento</a></button>
+        {% if user.is_authenticated %}
+          <button class="btn btn-danger"><a href="{% url 'logout_view' %}">salir</a></button>
+        {% else %}
+          <button  class="btn btn-warning"><a href="{% url 'login' %}">ingresar</a></button>
+        {% endif %}
         </nav>
       </div>
      

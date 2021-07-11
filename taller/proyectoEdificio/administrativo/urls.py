@@ -27,4 +27,7 @@ urlpatterns = [
         name='editar_departamento'),
         path('crear/departamento/edificio/<int:id>', views.crear_departamento_edificio, 
         name='crear_departamento_edificio'),
+        #Registracion
+        path('saliendo/logout/', views.logout_view, name="logout_view"),
+        path('entrando/login/', views.ingreso, name="login"),
 ]
